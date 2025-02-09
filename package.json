@@ -1,0 +1,25 @@
+{
+  "name": "bloggers",
+  "version": "1.0.0",
+  "description": "Bloggers.io for Philosophers",
+  "main": "index.js",
+  "repository": "https://github.com/VanshajTiwari/Vlogging_App.git",
+  "author": "<vanshajtiwari62@gmail.com>",
+  "license": "MIT", 
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "back:test": "yarn workspace backend test",
+    "front:test": "yarn workspace frontend dev",
+    "back:build":"yarn workspace backend build",
+    "front:build":"yarn workspace frontend test",
+    "test": "concurrently \"yarn back:test\" \"yarn front:test\"",
+    "build":"concurrently \"yarn back:build\" \"yarn front:build\""
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
